@@ -1,0 +1,218 @@
+:root {
+  --bg: #000000;
+  --surface: rgba(4, 0, 0, 0.245);
+  --surface-2: rgba(42, 40, 40, 0.245);
+  --surface-3: rgba(4, 0, 0, 0.245);
+  --border: #6223d8;
+  --border-soft: #1b2540;
+
+  --brand: #22e8a3;
+  --brand-dim: #17b384;
+  --brand-tint: rgba(34, 232, 163, 0.1);
+
+  --mpesa: #3fae49;
+  --mpesa-dim: #2f8a38;
+
+  --wabling:rgba(255, 255, 255, 0.1);
+  --wablingkibla:rgba(4, 0, 0, 0.245);
+
+  --text: #eaf2f5;
+  --text-muted: #8494ab;
+  --text-faint: #55617a;
+
+  --warn: #f5a623;
+  --warn-tint: rgba(245, 166, 35, 0.12);
+  --danger: #ff5c5c;
+  --danger-tint: rgba(255, 92, 92, 0.12);
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --radius: 14px;
+  --radius-sm: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle at 0.2px 0.2px, var(--wabling) 1px, transparent 0);
+  background-size: 26px 26px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+button {
+  font-family: inherit;
+}
+
+.portal-shell {
+  position: relative;
+  z-index: 1;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 28px 16px 56px;
+}
+
+.portal-frame {
+  width: 100%;
+  max-width: 440px;
+}
+
+/* the spending dashboard has room to breathe on desktop */
+.portal-frame--wide {
+  max-width: 620px;
+}
+
+details > summary {
+  list-style-position: inside;
+}
+
+.scale-in {
+  animation: scaleIn 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.55;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scale-in,
+  .pulse-ring,
+  .spin {
+    animation: none !important;
+  }
+}
+
+.packo
+{
+  text-align: left;
+  background-color: var(--wablingkibla);
+  backdrop-filter: blur(16px) saturate(0.8) brightness(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(0.8) brightness(1.2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 16px 14px;
+  cursor: pointer;
+  color: inherit;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 8;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+  
+}
+
+/*iconn konekt*/
+.konekt-icon
+{
+  height: 30px;
+  margin-left: -5px;
+  
+
+}
+
+/*button-price*/
+
+
+/*buttons*/
+.btn-grad
+{
+  background-image: linear-gradient(to right, rgba(201, 161, 75, 0.988) 0%, #E7E9BB 51%, rgb(201, 162, 75)100%);
+  color: black;
+}
+
+.btn-grad {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: var(--fontDhurajati);
+  font-size: 17px;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: black;
+  display: flex;
+  font-weight: bold;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+}
+
+.btn-grad:hover {
+  background-position: right center;
+  color: #fff;
+  box-shadow: 0 0 2px #eee;
+  text-decoration: none;
+}
+
+
+
+/*Light rays*/
+.light-rays-container {
+  width: 100%;
+  height: 105%;
+  margin-top: -30px;
+  position: absolute;
+  pointer-events: none;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.b7-duration
+{
+  font-size: 11.5px;
+  
+}

@@ -1,0 +1,189 @@
+.pixelated-image-card {
+  background-color: #222;
+  color: var(--color-primary, #fff);
+  border-radius: 15px;
+  border: 2px solid #fff;
+  width: 300px;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.pixelated-image-card__default,
+.pixelated-image-card__active,
+.pixelated-image-card__pixels {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.pixelated-image-card__active {
+  z-index: 2;
+}
+
+.pixelated-image-card__active {
+  display: none;
+}
+
+.pixelated-image-card__pixels {
+  pointer-events: none;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.pixelated-image-card__pixel {
+  display: none;
+  position: absolute;
+}
+
+.home-intro {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 2rem;
+align-self:center;
+max-width: 450px;
+}
+
+/* PIXEL TRANSITION */
+
+.home-pixel {
+width: 180px;
+height: 180px;
+align-self: center;
+overflow: hidden;
+}
+
+.custom-pixel-card {
+width: 100%;
+height: 100%;
+}
+
+.pixel-intro-content {
+width: 100%;
+height: 100%;
+display: grid;
+place-items: center;
+background: #111;
+color: #fff;
+}
+
+.pixel-intro-content span {
+font-size: 1.5rem;
+font-weight: 900;
+letter-spacing: 0.15em;
+}
+
+.pixel-second {
+background: #fff;
+color: #111;
+}
+
+/* TEXT ANIMATION */
+
+.intro-text {
+display: flex;
+flex-direction: column;
+align-items: center;
+overflow: hidden;
+background-color: transparent;
+padding: 10px;
+border-radius: 20px;
+justify-self: center;
+align-self: center;
+backdrop-filter:blur(13px);
+}
+
+.intro-greeting,
+.intro-title,
+.intro-description,
+.home-intro .route-actions {
+opacity: 0;
+transform: translateY(60px);
+animation: homeSlideUp 2.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.intro-greeting {
+animation-delay: 0.5s;
+font-size: 1.1rem;
+font-weight: 600;
+}
+
+.intro-title {
+margin: 0.4rem 0 0;
+font-size: clamp(0.5rem, 0vw, 0rem);
+line-height: 0.9;
+letter-spacing: -0.06em;
+animation-delay: 0.65s;
+}
+
+.intro-description {
+max-width: inherit;
+margin: 1.5rem 0 0;
+font-size: 1.15rem;
+line-height: 1.6;
+animation-delay: 0.8s;
+}
+
+.home-intro .route-actions {
+display: flex;
+gap: 0.8rem;
+animation-delay: 0.95s;
+}
+
+.home-intro button {
+cursor: pointer;
+border: none;
+padding: 0.9rem 1.5rem;
+border-radius: 999px;
+font-size: 0.95rem;
+font-weight: 700;
+transition: transform 0.25s ease;
+}
+
+.home-intro button:hover {
+transform: translateY(-3px);
+}
+
+.hire-button {
+background: #fff;
+color: #111;
+margin-top: -35px;
+justify-self: center;
+
+}
+
+.route-secondary {
+background: transparent;
+color: inherit;
+border: 1px solid currentColor !important;
+}
+
+@keyframes homeSlideUp {
+from {
+opacity: 0;
+transform: translateY(60px);
+}
+
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+.intro-greeting,
+.intro-title,
+.intro-description,
+.home-intro .route-actions {
+animation: none;
+opacity: 1;
+transform: none;
+}
+}
